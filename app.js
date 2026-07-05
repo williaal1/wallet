@@ -67,6 +67,9 @@ async function refreshState() {
     if (!res.ok) throw new Error(`state ${res.status}`);
     renderState(await res.json());
   } catch (err) {
+    $("wallet-amount").textContent = "—";
+    $("daily-total").textContent = "—";
+    $("entries-list").innerHTML = '<p class="empty-state">Can\'t reach the wallet — pull to refresh</p>';
     showStatus(`Couldn't load: ${err.message}`, "error");
   }
 }
