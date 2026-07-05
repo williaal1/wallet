@@ -207,8 +207,8 @@ function tzDateParts(date, tz) {
 function nowIso(env) {
   const now = new Date();
   const p = tzDateParts(now, env.TZ);
-  const offsetMin = -tzOffsetMinutes(now, env.TZ);
-  const sign = offsetMin <= 0 ? "-" : "+";
+  const offsetMin = tzOffsetMinutes(now, env.TZ);
+  const sign = offsetMin < 0 ? "-" : "+";
   const abs = Math.abs(offsetMin);
   const oh = String(Math.floor(abs / 60)).padStart(2, "0");
   const om = String(abs % 60).padStart(2, "0");
