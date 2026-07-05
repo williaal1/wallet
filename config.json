@@ -1,0 +1,13 @@
+{
+  "daily_rate": 55,
+  "worker_url": "https://wallet-api.WORKER_SUBDOMAIN.workers.dev",
+  "categories": [
+    { "id": "GROCERIES", "label": "Groceries" },
+    { "id": "RESTAURANTS", "label": "Restaurants" },
+    { "id": "SHOPPING", "label": "Shopping" },
+    { "id": "BOOKS_RECORDS", "label": "Books/Records" },
+    { "id": "CAR", "label": "Car" },
+    { "id": "TRAVEL", "label": "Travel" },
+    { "id": "OTHER", "label": "Other" }
+  ]
+}

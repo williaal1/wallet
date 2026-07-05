@@ -1,0 +1,14 @@
+name = "wallet-api"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+REPO = "williaal1/wallet"
+BRANCH = "main"
+LOG_PATH = "spending_log.csv"
+CONFIG_PATH = "config.json"
+TZ = "America/New_York"
+
+# Secrets (set via `npx wrangler secret put <NAME>`):
+#   GITHUB_TOKEN  — fine-grained PAT, williaal1/wallet only, Contents read/write, no expiration
+#   WALLET_KEY    — shared key baked into the phone bookmark URL (?k=...)

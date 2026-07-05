@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Wallet">
+  <title>Wallet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Key Setup Modal (only if no key in URL or storage) -->
+  <div id="setup-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Wallet key</h2>
+      <p>Enter the shared key for the wallet API. It lives in your bookmark URL — if you're seeing this, re-bookmark after entering it.</p>
+      <input type="password" id="key-input" placeholder="key" autocomplete="off">
+      <button id="save-key" class="btn-primary">Save</button>
+      <p class="hint">The key is recoverable any time from the laptop — this is not the V1 token situation.</p>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <div id="app" class="hidden">
+    <!-- Header: wallet balance -->
+    <div id="header">
+      <div id="wallet-balance">
+        <span id="wallet-amount">$0.00</span>
+        <span id="wallet-label">wallet</span>
+      </div>
+      <div id="wallet-recovery" class="hidden"></div>
+      <div id="wallet-divider"></div>
+      <div id="daily-status">
+        <span id="daily-total">$0.00</span>
+        <span id="daily-target">/ $55.00 today</span>
+      </div>
+      <div id="date-display"></div>
+    </div>
+
+    <!-- Amount Input -->
+    <div id="amount-section">
+      <div id="amount-display">$0.00</div>
+      <div id="numpad">
+        <button class="num" data-val="1">1</button>
+        <button class="num" data-val="2">2</button>
+        <button class="num" data-val="3">3</button>
+        <button class="num" data-val="4">4</button>
+        <button class="num" data-val="5">5</button>
+        <button class="num" data-val="6">6</button>
+        <button class="num" data-val="7">7</button>
+        <button class="num" data-val="8">8</button>
+        <button class="num" data-val="9">9</button>
+        <button class="num" data-val=".">.</button>
+        <button class="num" data-val="0">0</button>
+        <button class="num del" data-val="del">&larr;</button>
+      </div>
+    </div>
+
+    <!-- Category Grid (rendered from config.json) -->
+    <div id="category-section">
+      <div id="category-grid"></div>
+    </div>
+
+    <!-- Note Field -->
+    <div id="note-section">
+      <input type="text" id="note-input" placeholder="Note (optional)" autocomplete="off">
+    </div>
+
+    <!-- Submit -->
+    <button id="submit-btn" class="btn-primary" disabled>Log</button>
+
+    <!-- Status Message -->
+    <div id="status-msg" class="hidden"></div>
+
+    <!-- Today's Entries -->
+    <div id="entries-section">
+      <h3>Today</h3>
+      <div id="entries-list">
+        <p class="empty-state">Loading...</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <button id="reset-wallet" class="link-btn">Reset wallet</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
