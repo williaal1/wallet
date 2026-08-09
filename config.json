@@ -1,5 +1,5 @@
 {
-  "daily_rate": 55,
+  "daily_rate": 25,
   "worker_url": "https://wallet-api.alextwilliams01.workers.dev",
   "categories": [
     { "id": "GROCERIES", "label": "Groceries" },
